@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import hostDetails, visitor, isVisited
 
-# Register your models here.
+admin.site.register(hostDetails)
+admin.site.register(visitor)
+admin.site.register(isVisited)
