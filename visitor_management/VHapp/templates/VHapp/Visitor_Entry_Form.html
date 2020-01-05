@@ -1,0 +1,21 @@
+{% extends "VHapp/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form action="{% url 'create-new-entry' %}" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Enter Visitor's Phone Number To Create New Entry</legend>
+                Phone: <input type="" name="phone" width="480">
+
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Create New Entry</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    If Visitor Does Not Exist<a href="{% url 'create-new-visitor' %}"> Enter New Here</a>
+                </small>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

@@ -38,7 +38,6 @@
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                
               {% endif %}
             </div>
           </div>
@@ -64,6 +63,12 @@
               <ul class="list-group">
                 <li class="list-group-item list-group-item-light">Total visitors</li>
                 <li class="list-group-item list-group-item-light">Announcements</li>
+                {% if user.is_authenticated %}
+                    <li class="list-group-item list-group-item-light">
+                    <a href="{% url 'create-new-visitor'  %}">New Visitor</a></li>
+                    <li class="list-group-item list-group-item-light">
+                    <a href="{% url 'visitor-entry'  %}">Visitor's Entry</a></li>
+                {% endif %}
               </ul>
             </p>
           </div>
